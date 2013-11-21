@@ -16,7 +16,7 @@
 
 var FlatKeyboard = function(elementName) {
     this.cSize={"width": 530, "height": 190};
-    this.preSet={ "white": 148, "black": 28, "ctrl": 34 };
+    this.preSet={ "white": 148, "black": 20, "ctrl": 34 };
     
     this.canvas=document.getElementById(elementName);
     this.canvas.setAttribute("width", this.cSize.width+"px");
