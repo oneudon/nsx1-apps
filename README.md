@@ -19,7 +19,3 @@ Yamaha製のNSX-1が搭載された機器をMIDI経由でコントロールす�
 **Copyright (c) 2013 Yamaha Corporation released under the MIT license.**  
 このソフトウェアは、MITライセンスのもとで公開しています。詳しくは LICENSE をご参照ください。  
 (This software is released under the MIT License, see LICENSE.)
-
-
-## 注意事項
-公序良俗に反する歌詞を含む合成音声、またそれを誘発するプログラムを公開・配布することは、いかなる場合においても禁じられています。
