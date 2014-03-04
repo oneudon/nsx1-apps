@@ -96,6 +96,7 @@ Nsx1.prototype={
                 }
                 if(typeof t==="undefined") {
                     console.log("[ERROR] "+tmp.substring(j, j+1));
+                    break;
                 }
                 for(var k=0; k<t.length; k++) {
                     outTmp.push(t.charCodeAt(k));
