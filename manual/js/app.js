@@ -41,7 +41,7 @@ $(function() {
 });
 
 var browser, icon=false, brInfo;
-var canaryVersion=32;
+var canaryVersion=35;
 var userAgent = window.navigator.userAgent.toLowerCase() || "unkown";
 var icons = {
         "canary" : "<img class=\"reqicon\" src=\"images/chrome_canary_icon.png\" width=\"20px\">",
@@ -53,7 +53,8 @@ var icons = {
 
 if(userAgent.search(/chrome/)!=-1) {
     var version=parseInt(userAgent.substr(userAgent.search(/chrome/)+6+1, 2));
-    if(version>=32) {
+    var brVersion=version;
+    if(version>=35) {
         icon=icons["canary"];
         brInfo="canary";
     } else {
@@ -97,13 +98,12 @@ if(iconos===false) {
 }
 document.getElementById("osInfo").innerHTML=iconos + osInfo;
 
-if(opsysInfo=="mac" && brInfo=="canary") {
-    document.getElementById("move2setup").href="#maccanarysetup";
-} else if(opsysInfo=="mac" && brInfo=="chrome") {
-    document.getElementById("move2setup").href="#macsetup";
-} else if(opsysInfo=="windows" && brInfo=="chrome") {
-    document.getElementById("move2setup").href="#windowssetup";
-} else {
-    document.getElementById("move2setup").style.setProperty("visibility", "hidden");
-    document.getElementById("move2setup").style.setProperty("display", "none");
+if(brInfo=="chrome" && brVersion>=33) {
+    document.getElementById("ready").innerHTML="Ready!! <span class=\"glyphicon glyphicon-wrench\"></span> セットアップへ";
+
+    document.getElementById("chromeDlLink").style.setProperty("visibility", "hidden");
+    document.getElementById("chromeDlLink").style.setProperty("display", "none");
+
+    document.getElementById("chromeInstallInstruction").style.setProperty("visibility", "hidden");
+    document.getElementById("chromeInstallInstruction").style.setProperty("display", "none");
 }

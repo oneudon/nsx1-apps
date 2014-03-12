@@ -58,7 +58,6 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span> セットアップ <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#maccanarysetup">Mac OS X 10.6 以降 + Google Chrome Canary</a></li>
                   <li><a href="#macsetup">Mac OS X 10.6 以降 + Google Chrome</a></li>
                   <li><a href="#windowssetup">Windows 8/7/Vista/XP</a></li>
                 </ul>
@@ -165,8 +164,7 @@
                 
                 <div class="requirementstitle">ブラウザ</div>
                 <ul class="nodotlist">
-                  <li class="list0"><img class="reqicon" src="images/chrome_canary_icon.png" width="20px"> Google Chrome Canary Version 32 以降 <a href="http://www.google.co.jp/intl/ja/chrome/browser/canary.html" class="btn btn-xs btn-default downloadbutton" target="_blank">ダウンロード</a><BR> <span class="browserflags">（<img class="reqicon" src="images/macos.png" width="20px"> flagsの変更が必須、<img class="reqicon" src="images/windows.png" width="20px"> Jazz-Pluginのインストールが必須）</span></li>
-                  <li class="list0"><img class="reqicon" src="images/chrome_icon.png" width="20px"> Google Chrome Version 30 以降 <a href="http://www.google.com/intl/ja/chrome/browser/" class="btn btn-xs btn-default downloadbutton" target="_blank">ダウンロード</a><BR> <span class="browserflags">（<img class="reqicon" src="images/macos.png" width="20px"> <img class="reqicon" src="images/windows.png" width="20px"> Jazz-Pluginのインストールが必須）</span></li>
+                  <li class="list0"><img class="reqicon" src="images/chrome_icon.png" width="20px"> Google Chrome Version 33 以降 <a id="chromeDlLink" href="http://www.google.com/intl/ja/chrome/browser/" class="btn btn-xs btn-default downloadbutton" target="_blank">ダウンロード</a><BR> <span class="browserflags"></span></li>
                 </ul>
 
                 <div class="requirementstitle">現在ご利用の環境</div>
@@ -174,7 +172,9 @@
                   <li class="list0"><span class="label label-default">OS</span> <span id="osInfo"></span></li>
                   <li class="list0"><span class="label label-default">ブラウザ</span> <span id="userAgent"></span></li>
                 </ul>
-                <div class="floatright launchapp"><a id="move2setup" href="" class="btn btn-sm btn-warning" target="_blank">セットアップへ</a></div>
+                <div class="floatright launchapp">
+                  <a id="ready" href="#setuptop" class="btn btn-xs btn-default downloadbutton" target="_blank"><span class="glyphicon glyphicon-wrench"></span> セットアップへ</a>   
+                </div>
               </div>
             </div>
           </div>
@@ -192,85 +192,39 @@
               </div>
               <div id="setuppic" class="container"></div>
               <div class="panel-body">
-                <a name="maccanarysetup"></a>
-                <div class="requirementstitle"> <img class="reqicon" src="images/macos.png" width="20px"> Mac OS X 10.6 以降 + <img class="reqicon" src="images/chrome_canary_icon.png" width="20px"> Google Chrome Canary </div>
+
+                <div class="clearboth"></div>
+                
+                <a name="macsetup"></a>
+                <a name="windowssetup"></a>
+                <div class="requirementstitle"> 
+                  <img class="reqicon" src="images/chrome_icon.png" width="20px"> Google Chrome + <img class="reqicon" src="images/macos.png" width="20px"> Mac OS X 10.6 以降 or <img class="reqicon" src="images/windows.png" width="20px"> Windows 8/7/Vista/XP<BR>
+                </div>
                 <div class="setupdescription">
                   <ol>
                     <li class="libold">eVY1 SHIELD を Mac に接続</li>
-                    <p>Google Chrome Canaryを起動する前に接続をしないと認識されません。</p>
+                    <p>Google Chromeを起動する前に接続をしないとアプリケーションから認識できません。</p>
                     
                     <li class="libold">eVY1 SHIELD にスピーカー（またはヘッドセット等）を接続</li>
                     <p>eVY1 SHIELDにはスピーカーを内蔵していませんので、必ず接続してください。</p>
                     
-                    <li class="libold">Google Chrome Canary のインストールと起動</li>
-                    <p>Google Chrome Canaryのダウンロードは<a href="http://www.google.co.jp/intl/ja/chrome/browser/canary.html" target="_blank">こちら</a>から行ってください。(Version 32以降をお使いください。)</p>
+                    <span id="chromeInstallInstruction">
+                    <li class="libold">Google Chrome のインストールと起動</li>
+                    <p>Google Chromeのダウンロードは<a href="http://www.google.com/intl/ja/chrome/browser/" target="_blank">こちら</a>から行ってください。</p>
+                    </span>
                     
                     <li class="libold">chrome://flags の設定 (初回利用時にのみ必須)</li>
                     <p>chrome://flags/#enable-web-midi をアドレスバーに入力後、「Web MIDI APIを有効にする」の欄にある <span class="dummylink">有効にする</span> をクリックし、Google Chrome Canary を再起動してください。</p>
                     
-                    <li class="libold">Apps にアクセス</li>
-                    <p><a href="#apps">こちら</a>から Apps へアクセスしてください。</p>
-                  </ol>
-                </div>
-                <div class="clearboth"></div>
-                
-                <a name="macsetup"></a>
-                <div class="requirementstitle"> <img class="reqicon" src="images/macos.png" width="20px"> Mac OS X 10.6 以降 + <img class="reqicon" src="images/chrome_icon.png" width="20px"> Google Chrome </div>
-                <div class="setupdescription">
-                  <ol>
-                    <li class="libold">eVY1 SHIELD を Mac に接続</li>
-                    <p>Google Chromeを起動する前に接続をしないと認識されません。</p>
-                    
-                    <li class="libold">eVY1 SHIELD にスピーカー（またはヘッドセット等）を接続</li>
-                    <p>eVY1 SHIELDにはスピーカーを内蔵していませんので、必ず接続してください。</p>
-                    
-                    <li class="libold">Google Chrome のインストールと起動</li>
-                    <p>Google Chromeのダウンロードは<a href="http://www.google.com/intl/ja/chrome/browser/" target="_blank">こちら</a>から行ってください。</p>
-                    
-                    <li class="libold">Jazz-Soft.net から Jazz-Plugin のダウンロードとインストール</li>
-                    <p>
-                         Jazz-Pluginを<a href="http://jazz-soft.net/download/Jazz-Plugin/" target="_blank">こちら</a>からダウンロードし、インストール。<br>
-                      <a href="images/jazzplugin_mac.png" data-lightbox="jazzmac" title="Jazz-Plugin ダウンロードリンク(Mac)"><img class="requirementsimg" src="images/jazzplugin_mac.png" width="150px"></a>
-                    </p>
-                    
-                    <li class="libold">Google Chrome の起動</li>
-                    <p>起動済みの場合は一度再起動をしてください。</p>
-                    
-                    <li class="libold">Apps にアクセス</li>
-                    <p><a href="#apps">こちら</a>から Apps へアクセスしてください。</p>
-                  </ol>
-                </div>
-                <div class="clearboth"></div>
-                
-                <a name="windowssetup"></a>
-                <div class="requirementstitle"> <img class="reqicon" src="images/windows.png" width="20px"> Windows 8/7/Vista/XP + <img class="reqicon" src="images/chrome_icon.png" width="20px"> Google Chrome</div>
-                <div class="setupdescription">
-                  <ol>
-                    <li class="libold">eVY1 SHIELD を PC に接続</li>
-                    <p>Google Chromeを起動する前に接続をしないと認識されません。</p>
-                    
-                    <li class="libold">eVY1 SHIELD にスピーカー（またはヘッドセット等）を接続</li>
-                    <p>eVY1 SHIELDにはスピーカーを内蔵していませんので、必ず接続してください。</p>
-                    
-                    <li class="libold">Google Chrome のインストール</li>
-                    <p>Google Chromeのダウンロードは<a href="http://www.google.com/intl/ja/chrome/browser/" target="_blank">こちら</a>から行ってください。</p>
-                    
-                    <li class="libold">Jazz-Soft.net から Jazz-Plugin のダウンロードとインストール</li>
-                    <p>
-                        Jazz-Pluginを<a href="http://jazz-soft.net/download/Jazz-Plugin/" target="_blank">こちら</a>からダウンロードし、インストールしてください。<br>
-                      <a href="images/jazzplugin_windows.png" data-lightbox="jazzwindows" title="Jazz-Plugin ダウンロードリンク(Windows)"><img class="requirementsimg" src="images/jazzplugin_windows.png" width="150px"></a>
-                    </p>
-                    
                     <li class="libold">Google Chromeを起動</li>
                     <p>起動済みの場合は再起動をしてください。</p>
-                    
+
                     <li class="libold">Apps にアクセス</li>
-                    <p>
-                      
-                      <a href="#apps">こちら</a>から Apps へアクセスしてください。</p>
+                    <p><a href="#apps">こちら</a>から Apps へアクセスしてください。</p>
                   </ol>
                 </div>
                 <div class="clearboth"></div>
+                
               </div>
             </div>
           </div>
