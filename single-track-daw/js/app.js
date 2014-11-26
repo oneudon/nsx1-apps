@@ -118,8 +118,22 @@ var mIn, mOut;
 navigator.requestMIDIAccess({sysex: true}).then( scb, ecb );
 function scb(access) {
     MIDI = access;
-    outputs=MIDI.outputs();
-    inputs=MIDI.inputs();
+    
+    if (typeof MIDI.inputs === "function") {
+        inputs=MIDI.inputs();
+        outputs=MIDI.outputs();
+    } else {
+        var inputIterator = MIDI.inputs.values();
+        inputs = [];
+        for (var o = inputIterator.next(); !o.done; o = inputIterator.next()) {
+            inputs.push(o.value)
+        }
+        var outputIterator = MIDI.outputs.values();
+        outputs = [];
+        for (var o = outputIterator.next(); !o.done; o = outputIterator.next()) {
+            outputs.push(o.value)
+        }
+    }
 
     // MIDI IN
     var mi=document.getElementById("midiInSel");
